@@ -1,0 +1,96 @@
+in EC2 Terminal
+
+sudo apt update && sudo apt upgrade -y
+sudo apt install apache2 -y
+sudo systemctl start apache2
+sudo systemctl enable apache2
+sudo systemctl status apache2
+
+
+
+Step 2.3 Test Website
+
+Open browser and paste your EC2 Public IP:
+
+Example:
+
+http://your-public-ip
+
+You should see:
+
+Apache2 Ubuntu Default Page
+
+If it opens, Apache is working.
+
+
+
+Step 2.4 Remove Default Apache Page
+
+Run:
+
+cd /var/www/html
+
+Delete default file:
+
+sudo rm index.html
+
+
+
+Step 2.5 Install unzip
+
+Run:
+
+sudo apt install unzip -y
+
+
+
+
+
+
+Step 2.6 Download Ecommerce Template
+
+Open:
+
+Free Website Templates Ecommerce Category
+
+Choose an eCommerce template and click Download on your computer.
+
+After download, extract ZIP on your PC.
+
+You will get a folder like:
+
+ecommerce-template
+
+
+
+
+IN POWERSHELL  EXTRACT FILE
+
+
+scp -i "C:\Users\Abhay\Downloads\ecommerce-key.pem" -r .\* ubuntu@YOUR_PUBLIC_IP:/home/ubuntu/
+
+
+
+
+go again in EC2 Terminal
+
+ls /home/ubuntu
+
+/home/ubuntu/feane-1.0.0
+
+
+
+
+sudo cp -r /home/ubuntu/feane-1.0.0/* /var/www/html/
+sudo chmod -R 755 /var/www/html
+sudo chown -R www-data:www-data /var/www/html
+sudo systemctl restart apache2
+
+
+
+Check public ip your website is working now !
+
+
+
+
+
