@@ -1,0 +1,19 @@
+class MainHandler(webapp.RequestHandler):
+    def get(self):
+        self.response.out.write("""
+        <html>
+        <head>
+            <title>My App</title>
+        </head>
+        <body>
+            <h1>Welcome to My Simple App</h1>
+            <p>Name: Abhay</p>
+            <p>Course: MCA</p>
+            <p>College Dashboard</p>
+
+            <button onclick="alert('Hello Student!')">
+                Click Me
+            </button>
+        </body>
+        </html>
+        """)
