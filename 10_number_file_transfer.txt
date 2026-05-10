@@ -16,7 +16,7 @@ ifconfig - get inet ip
 => go VM1
 
 
-scp -i sample.txt vagrant@ip:/home/vagrant
+scp sample.txt vagrant@ip:/home/vagrant
 
 
 => go VM2
